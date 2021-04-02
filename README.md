@@ -1,2 +1,2 @@
 # cousera-test
-coursera test
+This repository is for my coursera course on web development.
