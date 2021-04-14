@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Selectors</title>
+	<style>
+		body{
+			background-color: black;
+			color: white;
+			opacity: .7;
+		}
+
+		#main_heading{ /* id selector */
+			
+			font-weight:bold;
+			text-align: center;
+			font-size: 50px;
+		}
+
+		.sec_heading{ /* class selector */
+			font-weight: bold;
+			
+			text-align:left;	
+			font-size: 30px;
+		}
+
+		.highlight{
+			background-color: red;
+		}
+
+		#last_pnt{
+			font-style: italic;
+			font-weight: bold;
+			text-align: center;
+			font-size: 18px;
+		}
+		
+		p,li{
+			font-size: 22px;
+		}
+
+
+	</style>
+</head>
+<body>
+	<h1 id="main_heading">BATMAN</h1>
+	<h2 class="sec_heading">Games -</h2>
+	<p>
+		<ul>
+			<li>Batman Arkhan Asylum</li>
+			<li>Batman Arkhan City</li>
+			<li>Batman Arkhan Origins</li>
+			<li>Batman Arkhan Knight</li>		
+		</ul>
+	</p>
+	<p>My favorite Batman game is Batman Arkham Knight.</p>
+	<h2 class="sec_heading">Movies -</h2>
+	<p>Batman Begins, The Dark Knight, The Dark Knight Rises, Batman vs Superman: Dawn of Justice and The Batman(2022).</p>
+	<div id="last_pnt">My favorite Batman actor is <span class="highlight">Robert Pattinson</span>, then <span class="highlight">Ben Affleck</span> .</div>
+</body>
+</html>
