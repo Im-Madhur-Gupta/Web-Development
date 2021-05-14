@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border and background</title>
+    <style>
+       #p1{
+            background-color: yellow;
+            color: red;
+            height: 200px;
+            width: 200px;
+            border: 2px dashed red;
+            /* for rounded corners of border - */
+            border-radius: 4px;
+        }
+       #p2{
+            background-color: yellow;
+            color: red;
+            height: 200px;
+            width: 200px;
+            border-top: 2px dashed red;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+        #p3{
+            background-image: url('https://betamoodle.iiitvadodara.ac.in/pluginfile.php/1/core_admin/logo/0x200/1610947218/LOGO.jpg');
+            height: 400px;
+            width: 400px;
+            border: 2px solid black;
+            background-repeat: no-repeat;
+            /* no-repeat matlab ek baar ayegi
+               reapeat-x matlab x axis me repeat, similar for repeat-y */
+            background-position: center center;
+            /* position me x-position and y-position dalni he
+               x-position - left, center and right
+               y-position - top, center and bottom
+               this can also be defined by pixel (from left(x) and top(y)) */
+        }
+    </style>
+</head>
+<body>
+    <h2>Heading</h2>
+    <p id="p1">Lorem ipsum dolor sit.</p>
+    <p id="p2">Lorem ipsum dolor sit.</p>
+    <p id="p3">Lorem ipsum dolor sit.</p>
+</body>
+</html>
