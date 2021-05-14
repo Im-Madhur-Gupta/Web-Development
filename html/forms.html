@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <form action="backend.php"> 
+        <!-- backend.php me mera sara input data store ho jaega -->
+
+        <div>
+        <label for="name">Name : </label>
+        <!-- for ke andar id ayegi us cheez ki jiska label he -->
+        <!-- fir label pe click karne se wo field/checkbox/radiobutton click ho jaenge -->
+            <input type="text" name="myName" id="name">
+            <!-- myName se mera backend upar wale input tag ke data ko pehchanega -->
+            <!-- div is a block level element whereas span and input are inline element -->
+        </div>
+        
+        <div>
+        <label for="roll">Roll No. : </label>
+            <input type="text" name="myRollNo" id="roll">
+        </div>
+
+        <div>
+            Email : <input type="email" name="myEmail">
+        </div>
+        
+        <div>
+            Date : <input type="date" name="date">
+        </div>
+        
+        <div>
+            <!-- yaha pe 4*10^3 ki power ke liye 4e3-->
+            Number : <input type="number" name="num">
+        </div>
+        
+        <div>
+            Are you eligible ?<input type="checkbox" name="myCheckbox" checked>
+            <!-- upar jaise checked likhne se ye checkbox by default checked rahega -->
+        </div>
+        
+        <div>
+            <!-- Note - jinbhi radio-button ka maine name same kardiya to unmese ek bar me ek hi select hoga. -->
+            Gender : <label for="male">Male </label><input type="radio" name="gender" id="male">Female <input type="radio" name="gender">
+            <br>
+            Retiered : Yes<input type="radio" name="retire">No<input type="radio" name="retire">
+        </div>
+        
+        <div>
+            <!-- gives an option to input large text from user, cols and rows define initial size of the textarea-->
+            Tell us about you : <div><textarea name="about" cols="30" rows="10"></textarea></div>
+        </div>
+
+        <div>
+            <label for="car_select">Select a Car - </label>
+            <!-- select tag is used to provide dropdown list -->
+            <select name="car" id="car_select">
+                <option value="Maruti">Maruti</option>
+                <option value="Hyundai" selected>Hyundai</option>
+                <option value="Suzuki">Suzuki</option>
+            </select>
+        </div>
+        
+        <div>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+        
+    </form>
+</body>
+</html>

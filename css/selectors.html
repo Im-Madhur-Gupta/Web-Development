@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+    <style>
+
+        /* element selector */
+        p{
+            color: red;
+        }
+        
+        /* id selector */
+        #purpletext{
+            color: blueviolet;
+        }
+        
+        /* class selector */
+        .bold{
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /* grouping 2 selectors together */
+        footer,span{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <p class="bold">Lorem ipsum dolor sit amet consectetur.</p>
+    <div id="purpletext">Lorem ipsum dolor sit amet consectetur.</div>
+
+    <div>
+        <p class="bold">Lorem ipsum dolor sit amet consectetur.</p>
+        <span>this is span</span>
+    </div>
+    <footer>footer</footer>
+    
+    <!-- user agent style sheet is the default styling provided by a browser. -->
+</body>
+</html>

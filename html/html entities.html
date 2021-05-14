@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Entities</title>
+</head>
+<body>
+    <!-- html chops off uneccesary spaces -->
+    <p>hi       space dali but html chopped them.</p>
+    <!-- agr ye upar wali spaces bhi print karni he to &nbsp; use karna padega which is a html entity
+    stands for no break spaces  -->
+    <p>hi&nbsp;&nbsp;&nbsp;&nbsp;space dali but html chopped them.</p>
+    <!-- but this doesnt look professional -->
+
+    <!-- similarly agr mujhe text me < aur > dalne he to uske liye bhi character entity reference chahiye
+                          less than < - &lt;             greater than > - &gt; -->
+    <p>Lorem, ipsum dolor. &lt;p&gt;</p>
+
+    <!-- many special symbols can be printed using character entity reference -->
+    <p>pound (UK) - &pound;</p>
+    <p>copyright - &copy;</p>
+    <!-- baki jo chahiye google karo -->
+</body>
+</html>

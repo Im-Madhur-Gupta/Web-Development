@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS internal and external declarations</title>
+    <style>
+        /* internal */
+        body{
+            background-color: yellow;
+        }
+        p{
+            background-color: #34656d !important;
+            /* !important karne se ab jo bhi precedence order ho hamesha important wala hi use hoga */
+            color: #fffbdf !important;
+        }
+    </style>
+    <!-- external -->
+    <link rel="stylesheet" href="ext1.css">
+    
+</head>
+<body>
+    <!-- inline declaration has highest precedence, basicaly jo zyada neeche he uska precedence zyada hota he -->
+    <!-- html is executed top to bottom -->
+    <p>Lorem ipsum dolor sit amet.</p>
+</body>
+</html>
