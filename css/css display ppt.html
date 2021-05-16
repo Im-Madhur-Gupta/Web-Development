@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS display ppt</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{background-color: #f6e6cb;}
+        img{
+            width: 100px;
+            height: 100px;
+            border: 2px solid #f6e6cb;
+            border-radius: 10px;
+
+            /* image ko beech me le jane ke liye - (IMP) */
+            /* we have to convert it from inline to block (display:block), then specify it's width (already done) then margin : auto */
+            display: block;
+            margin: auto;
+            margin-bottom: 5px;
+        }
+        h3{
+            font-family: cursive;
+            font-size: x-large;
+            font-weight: 900;
+            text-decoration: underline;
+            text-align: center;
+        }
+        .top{
+            width: 30%;
+            margin: 10px auto;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #e3cdc1;
+        }
+        .box{
+            background-color: #e3cdc1;
+            margin: 10px;
+            padding: 8px;
+            border: 2px solid black;
+            /* (IMP) display:inline-block karne se wo element won't overflow if it contain some block elements like p, h4 par wo ab puri line ni gherenge, matlab inline aur block ki best ppts sath me mil jaingi, basically box ke andar block level element jaisa behave karta he and box ke bahar like an inline element. */
+            display: inline-block;
+            width: 31.2%;
+        }
+        section{
+            /* section pehle se hi block he */
+            width: 95%;
+            margin: 20px auto;
+        }
+        p{
+            text-align: justify;
+        }
+        h4{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="top">
+        <img src="mad.jpg" alt="madhur gupta">
+        <h3>Welcome to Madhur's Blog</h3>
+    </header>
+
+    <section>
+        <article class="box">
+            <h4>Heading</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia cupiditate fugit voluptate corporis tempore necessitatibus aperiam officiis asperiores quibusdam laboriosam eos hic qui, dolores recusandae illum magnam optio consectetur. Quidem!</p>
+        </article>
+        <article class="box">
+            <h4>Heading</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia cupiditate fugit voluptate corporis tempore necessitatibus aperiam officiis asperiores quibusdam laboriosam eos hic qui, dolores recusandae illum magnam optio consectetur. Quidem!</p>
+        </article>
+        <article class="box">
+            <h4>Heading</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia cupiditate fugit voluptate corporis tempore necessitatibus aperiam officiis asperiores quibusdam laboriosam eos hic qui, dolores recusandae illum magnam optio consectetur. Quidem!</p>
+        </article>
+    </section>
+
+</body>
+</html>

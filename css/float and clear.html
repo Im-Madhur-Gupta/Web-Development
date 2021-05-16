@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float and clear</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> 
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Bangers', cursive;
+        }
+        .container{
+            width: 700px;
+            border: 3px solid black;
+
+            /* KABHI BHI AGR ELEMENT KO CENTER KARNA HO */
+            margin: 15px auto;
+            /* margin short hand - (IMP)
+               margin : top right; as bottom is ommited it's same as top, similar for left and right
+               top me pixel/%/em ke hisab se dena he aur right me bhi waise de sakte he 
+            (IMP) right me auto dedenge to wo element horizontally center ho jaega */
+        }
+        .item{
+            border: 2px dashed red;
+            padding: 10px;
+            margin: 10px;
+            background-color: wheat;
+        }
+        h3{
+            padding-bottom: 10px;
+            font-weight: 500;
+            text-align: center;
+            font-size:23px;
+        }
+        #fruitsdiv{
+            float: left;
+            width: 46%;
+        }
+        #vegdiv{
+            float: right;
+            width: 46%;
+        }
+        #stationarydiv{
+            clear: both;
+            /* iska matlab ki koi element(s) stationarydiv element ke left/right/both me float ni kar sakte aur agr karegi to stationarydiv element will move below */
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="fruitsdiv" class="item">
+            <h3>Fruits</h3>
+            <p >
+                Lorem ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore eius unde et, voluptas saepe reiciendis magnam suscipit quidem, deleniti reprehenderit tenetur, aperiam obcaecati! Sequi consequatur beatae ullam magni doloribus omnis!
+            </p>
+        </div>
+
+        <div id="vegdiv" class="item">
+            <h3>Vegetables</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio pariatur vitae neque repellat veritatis a eum rem ex saepe ad.
+            </p>
+        </div>
+
+        <div id="stationarydiv" class="item">
+            <h3>Stationary</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+        </div>
+        
+        <div id="glassdiv" class="item">
+            <h3>Glass ware</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

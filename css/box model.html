@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            /* some default values to counter user agent stylesheet - */
+            padding: 0;
+            margin: 0px;
+        }
+        body{
+            background-color: beige;
+        }
+        .container{
+            background-color: bisque;
+            border: 2px solid maroon;
+            padding: 10px;
+            margin: 15px;
+            /* short for padding and margin - 
+               ppt : top right bottom left; */
+            border-radius: 20px;
+            width: 400px;
+            /* ab is width me by default (content-box) sirf content ki width ati he, agr mujhe ye width as a
+            sum of content + padding + border chahiye to box-sizing : border-box; maine universal selector
+            me laga diya taki sabme border-box ho jae */
+        }
+        p{
+            text-align: justify;
+        }
+        h3{
+            padding-bottom: 5px;;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>para 1</h3>
+        <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, eum! Ipsam nostrum vel impedit corrupti laborum voluptatibus maiores culpa corporis.</p>
+    </div>
+
+    <div class="container">
+        <h3>para 2</h3>
+        <p id="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, eum! Ipsam nostrum vel impedit corrupti laborum voluptatibus maiores culpa corporis.</p>
+    </div>
+
+    <div class="container">
+        <h3>para 3</h3>
+        <p id="p3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, eum! Ipsam nostrum vel impedit corrupti laborum voluptatibus maiores culpa corporis.</p>
+    </div>
+</body>
+</html>

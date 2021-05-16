@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position PPT.</title>
+    <style>
+        /* position: static(default), relative, absolute, fixed, sticky.  */
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            border: 2px solid black;
+            height: 1500px;
+        }
+        .pset1{
+            border: 2px solid black;
+            margin: 10px;
+            padding: 5px;
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+        }
+        #p3{
+            /* relative matlab apni purani position ke respect me hilega and the old position will have a gap / would be left as it is. */
+            position: relative;
+            /* now I can move it wrt old position using top/left/right/bottom */
+            /* remember this distance is FROM top, FROM bottom etc */
+            top: 20px;
+            left: 15px;
+        }
+        #p2{
+            /* absolute positioning me element is moved with respect to its FIRST parent here, article container and its original postiion is lost/occupied by something else. */
+            position: absolute;
+            top: 200px;
+            right: 100px;
+        }
+        #p4{
+            /* fixed matlab wo pure WEB PAGE pe wahi dikhai dega jaha specify kiya he (scrolling karne par bhi koi pharak ni padega), container se koi pharak ni padta */
+            /* remember this top, bottom etc are relative to the BROWSER window */
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            /* best example for fixed is chat with us window that we see on websites. */
+        }
+        #p1{
+            /* sticky allows us to position an element relative to anything on the document and then, once a user has scrolled past a certain point in the viewport (top, bottom, left, right whatever defined), fix the position of the element to that location like an element with position: fixed. */
+            /* its experimental might change */
+            position: sticky;
+            top: 10px;
+            /* hoga ye ki jabtak mera p1 viewport / browser window ke top se 10px se zyada ki distance pe he to to wo relatively potioned rahega, but jaise hi top se distance 10px se kum hone wali hogi to p1 fixed position ka ho jaega. */
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione beatae unde cumque eos, ex aliquid, laborum aspernatur omnis dicta libero aliquam, magni minima recusandae hic? Excepturi similique culpa saepe asperiores illum, dolorem quae fugit, voluptates reiciendis expedita alias dolore pariatur tempore, ut commodi unde perspiciatis impedit cumque doloribus dignissimos numquam magnam quos. Est vero eveniet sit numquam modi
+    </p>
+
+    <article class="container">
+        <p class="pset1" id="p1">1</p>
+        <p class="pset1" id="p2">2</p>
+        <p class="pset1" id="p3">3</p>
+        <p class="pset1" id="p4">4</p>
+    </article>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione beatae unde cumque eos, ex aliquid, laborum aspernatur omnis dicta libero aliquam, magni minima recusandae hic? Excepturi similique culpa saepe asperiores illum, dolorem quae fugit, voluptates reiciendis expedita alias dolore pariatur tempore, ut commodi unde perspiciatis impedit cumque doloribus dignissimos numquam magnam quos. Est vero eveniet sit numquam modi
+    </p>
+</body>
+</html>
