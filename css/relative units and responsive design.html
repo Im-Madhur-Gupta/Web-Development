@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive design - Relative units</title>
+    <style>
+        html{
+            font-size: 15px;
+            /* use rem or em intead of this to take care of font size browser setting */
+        }
+        .container{
+            font-size: 20px;
+        }
+        #item1{
+            font-size: 4em; 
+            /* ab is div ka font-size ho jaega 4*20 = 80 px */
+            /* padding: 0.5em; */
+            /* ab padding ho jaegi 0.5*80 = 40px, as i said accumulate ho gaya */
+        }
+        #item2{
+            font-size: 2rem;
+            /* font-size 2*15 = 30px */
+            padding: 3rem;
+            /* padding 3*15 = 45px, it did not get accumulated. */
+        }
+        #item3{
+            border: 0.15rem solid rebeccapurple;
+            width: 50vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <!-- to achieve responsive design, step 1 is to use relative units like em, rem, %, vh and vw over pixels.  -->
+    
+    <!-- 1. em - Relative to the font-size of the direct parent element**, it gets accumulated, matlab agr apne ek ko 2em diya fir kisi aur ppt for same element ko 2 em aur diya to total size would be 4 times the size of parent for the 2nd ppt. em is used when we want our child elements to get resized when our parent element gets resized. rem is a better unit.
+    ** actually parent se ni hota, hota wo APNE font-size ke relative hi he but generally ye font size is inherited from direct parent thats why it has been said in this way. matlab agr maine kisi element ka font-size explicit px me define kar diya (say 20px) to to 2em ka matlab hoga 40px  -->
+
+    <!-- 2. rem - Relative to font-size of the html element, unlike em it DOES NOT GET ACCUMULATED. -->
+
+    <!-- Quick note when to use rem and em (this depends) - 
+        for html size use rem/em as this size is inherited from browser font size setting and if we use px then that setting wont apply to our page.
+        for modules inside body use rem
+        for content (li,p) inside a module use em, headings ke liye rem is better -->
+    
+    <!-- 3. vw and vh - short for viewport width and viewport height 
+            1 vw = 1% of total viewport width
+            1 vh = 1% of total viewport height (IMP) 
+        height ke liye vh use karte he and width ke liye vw use karte he -->
+
+    <div class="container">
+        <div id="item1">first</div>
+        <div id="item2">second</div>
+        <div id="item3">third</div>
+        <div id="item4">fourth</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        h2{
+            width: 50%;
+            margin: 10px auto;
+            text-align: center;
+        }
+        .container{
+            margin: 20px;
+            border: 2px solid black;
+            height: 500px;
+            /* IMP - flex box batane ke liye mujhe container me display: flex; */
+            display: flex;
+            /* aisa karte hi mera container bangaya flex container aur mere items bangaye flex items */
+            
+            /* Flex container ppts -  */
+
+            /* 1. flex-direction
+            row(default) - sare items row me arrange ho jaenge
+            column - sare items column me arrange ho jaenge
+            row-reverse - malab ab mere items right se bharna chalu honge in a row
+            column-reverse - matlab ab mere items botom se bharna chalu honge in a column */
+            /* flex-direction: row-reverse; */
+
+            /* 2. flex-wrap - controls whether the flex items will be wrapped or not when size of flex container is decreased, default - no-wrap
+            wrap kardene se wrap ho jaenge, wrap-reverse se ulte wrap ho jaenge */
+            /* flex-wrap: wrap-reverse; */
+
+            /* shorthand for flex-direction and flex-wrap - flex-flow  */
+            /* flex-flow: row-reverse wrap; */
+
+            /* 3. VERY IMP - justify-content - along base-axis alag alag tareke se position karne ke liye
+            # center - sare flex-items will be centered and space between them will be due to margin.
+            # space-between - extra space ko evenly divide karke sare items ke beech me daldo par start aur end pe ni.
+            # space-evenly - extra space ko evenly divide karke sare items ke beech me aur start end me daldo.
+            # space-around - har ek items ke left aur right pe particular (evenly divided) space ayegi, but jo consecutive items he unki jo facing spaces he wo accumulate ho jaengi.
+             */
+            /* justify-content: center; */
+            /* justify-content: space-between; */
+            /* justify-content: space-evenly; */
+            /* justify-content: space-around; */
+
+            /* 4. VERY IMP - align-items - along cross-axis alag alag tareke se position karne ke liye.
+            # center  - cross-axis me center.
+            # flex-start - default, top pe lag jaenge.
+            # flex-end - bottom me lag jaenge.
+            # stretch - agr items wrap honge to unke beech vertical distance will be even.*/
+            /* align-items: center; */
+        }
+        .items{
+            margin: 5px;
+            padding: 15px;
+            border: 2px solid red;
+            background-color: rgb(233, 175, 175);
+            height: 100px;
+            width: 100px;
+        }
+
+        /* Flex-items ppts. - */
+
+        /* 1. order - normal ordering ke liye, lower order pehle display hoga phir usse bada */
+        
+        /* 2. flex-grow - The flex-grow property specifies how much a flexible item will grow relative to the rest of the flexible items inside the same container, don't make it -ive, default value is 0 (ie if not specified that item won't grow). */
+       
+        /* 3. flex-shrink - same as flex-grow bus yaha shrink ke liye he and it DEFAULT is 1 NOT 0. */
+
+        /* 4. flex-basis - if flex-direction is set to row then flex-basis controls width 
+                           if flex-direction is set to colum then flex-basis controls height */
+        
+        /* flex-item ka shorthand - flex : flex_grow flex_shrink flex_basis */
+
+        /* 5. IMP align-self - this ppt is used to align an indivisual flex-item along cross axis
+                               values are center, flex-start (top), flex-end (bottom). */
+
+        #item1{
+            order: 2;
+            /* flex-grow: 3; */
+            /* flex-shrink: 2; */
+            align-self: center;
+        }
+        #item2{
+            order: 3;
+            /* flex-grow: 2; */
+            /* flex-shrink: 8; */
+        }
+        #item3{
+            order: 1;
+            /* flex-grow: 1; */
+        }
+    </style>
+</head>
+<body>
+    <h2>Flex Box</h2>
+    <div class="container">
+        <div class="items" id="item1">First</div>
+        <div class="items" id="item2">Second</div>
+        <div class="items" id="item3">Third</div>
+        <!-- <div class="items" id="item4">Fourth</div>
+        <div class="items" id="item5">Fifth</div>
+        <div class="items" id="item6">Sixth</div> -->
+    </div>
+</body>
+</html>
