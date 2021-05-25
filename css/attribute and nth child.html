@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attributes and nth child selector</title>
+    <style>
+        .container{
+            width: 15vw;
+            margin: 10px auto;
+        }
+        /* by default - input tags are inline. */
+        .inp{
+            display: block;
+        }
+        li{
+            list-style: none;
+        }
+
+        /* aise inputs ko select karna jinka attribute type = "text" ho ("" , '' both work) */
+        input[type="text"]{
+            background-color: red;
+        }
+
+        /* aise a (anchor) select karne he jinka target attribute defined ho */
+        a[target]{
+            text-decoration: none;
+        }
+
+        /* nth-child psuedo selector */
+        /* will be seperate for different uls */
+        li:nth-child(even){
+        /* can also use 2n+0 (n starts from 0 aur agr expresion ki value 0 ho jati he to kuch ni hota) */
+            color: maroon;
+        }
+        li:nth-child(odd){
+            /* could have also used 2n+1 */
+            color: peru;
+        }
+        /* similarly agr har agla 3rd element select karna he to 3n+0 */
+        li:nth-child(5){
+            background-color: antiquewhite;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><a href="http://google.com" target="_blank">google</a></h1>
+        <form action="no.php" class="form-control">
+            <input type="text" class="inp" name="name" placeholder="Enter name" id="name">
+            <input type="password" class="inp" name="password" placeholder="Enter password" id="pass">
+            <input type="submit" class="inp" value="Sign-in">
+        </form>
+
+        <ul>
+            <li>temp1</li>
+            <li>temp2</li>
+            <li>temp3</li>
+        </ul>
+
+        <ul>
+            <li class="items" id="item1">1</li>
+            <li class="items" id="item2">2</li>
+            <li class="items" id="item3">3</li>
+            <li class="items" id="item4">4</li>
+            <li class="items" id="item5">5</li>
+            <li class="items" id="item6">6</li>
+            <li class="items" id="item7">7</li>
+            <li class="items" id="item8">8</li>
+            <li class="items" id="item9">9</li>
+            <li class="items" id="item10">10</li>
+        </ul>
+        <a href="http://google.com">google</a>
+    </div>
+</body>
+</html>

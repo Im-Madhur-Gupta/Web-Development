@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before and After Psuedo Selector</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* IMPORTANT REGARDING BACKGROUND IMAGE */
+        /* body{
+            IMP to cover the image on whole background -
+            but below code doesn't cover the whole page some of it is left and we have problem of opacity as well
+            background: url('bale.jpg') no-repeat center center/cover;
+            so we do the following -
+        } */
+        header::before{
+            content: "";
+            background: url('wall.jpg') no-repeat center center/cover;
+            /* but itne se nahi hoga */
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            /* abhi puri image to aa gai pr text kuch ni dikh raha, so we have to tweak z-index for image */
+            z-index: -1;
+            /* unneccesary padding/margin ko hatane ke liye */
+            top: 0;
+            left: 0;
+            /* tweaking opacity */
+            opacity: 0.8;
+        }
+
+
+        .navbar {
+            display: flex;
+            margin: 0.5rem auto;
+            width: 55vw;
+            justify-content: center;
+        }
+
+        .items {
+            list-style: none;
+            font-size: 1em;
+            font-weight: 800;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-right: 0.1em solid rgb(94, 21, 21);
+            padding: 0.5em;
+            width: 20%;
+            text-align: center;
+        }
+
+        #item5 {
+            border: none;
+        }
+
+        /* before and after psuedo selectors, matlab kisi element se pehle ya badme kuch dalna he to use kar satke he */
+        section::before {
+            content: "before";
+        }
+
+        section::after {
+            content: "after";
+        }
+
+        section{
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="navbar">
+                <li class="items" id="item1">Home</li>
+                <li class="items" id="item2">About</li>
+                <li class="items" id="item3">Downloads</li>
+                <li class="items" id="item4">Contact Us</li>
+                <li class="items" id="item5">Job Openings</li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>MG Inc.</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident molestiae fuga repellat exercitationem
+            veniam nobis, autem fugiat et deserunt ex? At accusamus ab quos necessitatibus beatae. Rem aspernatur enim
+            dolorem!</p>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More on selectors</title>
+    <style>
+        /* decendent selector (andar wale saro ko select kar leta he) */
+        div p{
+            color: blue;
+        }
+        div div p{
+            font-weight: 700;
+        }
+
+        /* child selector (only direct child of the parent is selected) */
+        div > p{
+            font-style: italic;
+        }
+
+        /* just pichla wala SIBLING select karne ke liye */
+        /* ase p jinka just pichla sibling div he unko select karne ke liye */
+        div + p{
+            color: white;
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+        <div>
+            <span>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+            </span>
+        </div>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+</body>
+</html>

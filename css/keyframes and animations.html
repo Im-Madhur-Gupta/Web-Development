@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyframes and Animations</title>
+    <style>
+        .container{
+            background-color: antiquewhite;
+        }
+        .box{
+            background-color: black;
+            color: azure;
+            font-size: 1.5em;
+            /* utni width kardo is div ki jisme pura content aa jae */
+            width: 8em;
+            padding: 0.5em;
+            text-align: center;
+            position: relative;
+
+            /* CREATING AN ANIMATION */
+
+            /* 1. animation-name: anything; */
+            animation-name: mad1;
+
+            /* 2. animation-duration property defines how long an animation should take to complete ONE cycle. */
+            animation-duration: 2s;
+
+            /* 3. kitni bar apni animation dikhana chahte he thats iteration-count : int or infinite */
+            animation-iteration-count: 4;
+
+            /* 4. animation fil mode se mai ye bata sakta hu ki mujhe finally wo animation ka result rakhna he ya ni */
+            
+                /* 4.1. forwards se final ppts retain ho jaingi */
+                animation-fill-mode: forwards;
+
+                /* 4.2. alternate se the final ppt will go back to normal */
+                /* animation-fill-mode: alternate; */
+            
+            /* 5. animation timing function animation ki speed control karne ke liye at start and end of 1 cycle */
+                /* 5.1. ease-in matlab easy at start fast at end */
+                /* animation-timing-function: ease-in; */
+                
+                /* 5.2. ease-out matlab easy at end fast at start */
+                /* animation-timing-function: ease-out; */
+
+                /* 5.3. ease-in-out start aur end dono me easy beech me fast */
+                /* animation-timing-function: ease-in-out; */
+            
+            /* 6. animation delay ye batata he ki start se kitne seconds ke delay ke baad animation start karni he */
+            /* animation-delay: 1s; */
+
+            /* 7. animation direction */
+
+                /* 7.1. normal - (default) animation plays forward (from --> to)  */
+                /* animation-direction: normal; */
+
+                /* 7.2. reverse - animation plays backwards (to --> from) */
+                /* animation-direction: reverse; */
+
+                /* 7.3. alternate - animation plays forwards (from --> to) then backwards (to --> from) and this continues (Note - iske liye iteration count atleast 2 hona chahiye tab to dikhega) */
+                animation-direction: alternate;
+
+                /* 7.4. alternate-reverse - animation plays backwards (to --> from) then forwards (from --> to)and this continues (Note - iske liye iteration count atleast 2 hona chahiye tab to dikhega) */
+                /* animation-direction: alternate-reverse; */
+
+            /* NOW I have to define a KEYFRAME for this animation */
+
+            /* Another animation */
+            /* short hand - animation: name duration iteration-count; */
+            animation: mad2 4s 2;
+            animation-direction: alternate;
+
+        
+        }
+
+        /* DEFINING KEYFRAME */
+
+        /* Definition type 1 - from and to */
+        @keyframes mad1{
+            from{
+                width: 15em;
+            }
+            to{
+                width: 9em;
+            }
+        }
+
+        /* Definition type 2 - using % */
+        @keyframes mad2 {
+            /* Note - brackets ke andar wo ayega jo utna % complete hone par ho jana chahiye */
+            0%{
+                top: 0em;
+                left: 0em;
+            }
+            25%{
+                top: 0em;
+                left: 20em;
+            }
+            50%{
+                top: 20em;
+                left: 20em;
+            }
+            75%{
+                top: 20em;
+                left: 0em;
+            }
+            100%{
+                top: 0em;
+                left: 0em;
+            }
+        }
+
+        /* Note - Animations combine karna he to basically unke keyframes combine karne padenge */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            Batman
+        </div>
+    </div>
+</body>
+</html>

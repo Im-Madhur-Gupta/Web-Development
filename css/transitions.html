@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions in CSS</title>
+    <style>
+        #box{
+            width: 12em;
+            height: 12em;
+            border: 0.2em solid black;
+            background-color: red;
+            color: black;
+            font-weight: 800;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* Adding the transition */
+            
+            /* 1. Transition ppt specifies which css ppt will be transitioned
+                  all keyword use karne se sari ppts jo transition ho sakti he wo transition ho jaengi */
+            /* transition-property: background-color; now using :hover */
+            
+            /* 2. kitni der me ye transition complete karna he */
+            /* transition-duration: 2s; */
+
+            /*3. similar to animation , we have timing function with ease-in and out */
+            /* transition-timing-function: ease-out; */
+
+            /*4. similar to animation , we have transition-delay */
+            /* transition-delay: 1s; */
+
+            /* shorthand me issi order me ayega */
+            transition: all 2s ease-in-out;
+        }
+        #box:hover{
+            width: 13em;
+            height: 13em;
+            background-color: black;
+            color: red;
+            border: 0.2em solid red;
+            font-weight: 800;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS Transitions</h2>
+    <div class="container">
+        <div id="box">
+            Bruce Wayne is Batman
+        </div>
+    </div>
+</body>
+</html>

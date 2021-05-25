@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform ppt in CSS</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20rem;
+            background-color: antiquewhite;
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 12em;
+            width: 12em;
+            background-color: red;
+            color: blue;
+            font-weight: 900;
+            font-size: 1.2em;
+            border: 0.2em solid black;
+
+            /* rotating our box through some angle using transform ppt rotate */
+            /* transform: rotate(45deg); */
+
+            /* creating a transition with transform ppt */
+            transition: all 2s;
+        }
+        .box:hover{
+            /* transform rotate, rotateX rotateY rotateZ are used to rotate about X Y Z axes */
+            /* transform: rotate(45deg); */
+
+            /* transform skew - tircha kar dena*/
+            /* transform: skew(25deg); */
+
+            /* transform scale - kuch factor se bada/chota kardena */
+            /* transform: scale(1.3); */
+
+            /* transform translate - move karwane ke liye in X and Y */
+            transform: translate(10em, 10em);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            Clarke Kent is Superman.
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Shadow and Text Shadow</title>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .subcontainer {
+            padding: 0.8em;
+            margin: 0.8em;
+            border: 0.1em solid black;
+            background-color: bisque;
+            
+            /* Box Shadow ppt */
+            /* box-shadow: x-offset y-offset color; offsets can be -ive*/
+            box-shadow: 0.4em -0.4em rgb(153, 103, 42);
+            /* Alternatively - box-shadow: x-offset y-offset blur-radius color;
+            offsets can be -ive, default blur radius is 0, it basically tells how much our shadow would be smeared/blurred */
+            box-shadow: 0.4em -0.4em 0.06em rgb(153, 103, 42);
+            /* Another alternative - box-shadow: x-offset y-offset blur-radius spread-radius color;
+            offsets can be -ive */
+            box-shadow: 0.4em -0.4em 0.06em 0.06em rgb(153, 103, 42);
+
+            /* another way to set color is using rgba(red,blue,green,alpha)
+            alpha basically tells how bright would be our color, alpha = 0 would be darkest and 50 lightest*/
+            box-shadow: 0.4em -0.4em 0.06em 0.06em rgba(173, 118, 50, 0.452);
+
+            /* agar andar ki direction me shadow chahiye to  */
+            /* box-shadow: inset 0.4em -0.4em rgb(153, 103, 42); */
+
+            /* multiple shadows ( , seperated ) */
+            box-shadow: 0.4em -0.4em rgb(153, 103, 42), 0.8em -0.8em rgb(238, 235, 66);
+        }
+
+        /* text shadow */
+        .subcontainer h2{
+            /* box-shadow: x-offset y-offset color; offsets can be -ive*/
+            text-shadow: -0.1em 0.1em rgb(196, 160, 160);
+            /* isme bhi blur radius use kar sakte he */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="subcontainer">
+            <h2>
+                box 1
+            </h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia illum aspernatur eveniet autem accusamus
+                consectetur vitae rem quis hic commodi!
+            </p>
+        </div>
+        <div class="subcontainer">
+            <h2>
+                box 2
+            </h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia illum aspernatur eveniet autem accusamus
+                consectetur vitae rem quis hic commodi!
+            </p>
+        </div>
+        <div class="subcontainer">
+            <h2>
+                box 3
+            </h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia illum aspernatur eveniet autem accusamus
+                consectetur vitae rem quis hic commodi!
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

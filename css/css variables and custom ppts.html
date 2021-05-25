@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables and Custom Ppts</title>
+    <style>
+        :root{
+            --pri-clr: wheat;
+            --sec-clr: maroon;
+            --cont-width: 45vw;
+        }
+        .container{
+            display: flex;
+            width: var(--cont-width);
+            margin: auto;
+            background-color: var(--pri-clr);
+            box-shadow: 0.5rem 0.5rem var(--sec-clr);
+            justify-content: center;
+        }
+        .items{
+            
+            /* Creating a Custom Variable */
+            --box-clr: rgb(230, 136, 136);
+            /* now I can use var(--box-clr) for this particular color, but the problem is that the scope of this
+               variable is local to this css selector, ie. cant be used inside another selector */
+            /* to create global variables we use :root */
+
+            height: 8em;
+            width: 8em;
+            background-color: var(--box-clr);
+            border: 0.15em solid red;
+            margin: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="items" id="item1"></div>
+        <div class="items" id="item2"></div>
+        <div class="items" id="item3"></div>
+    </div>
+</body>
+</html>
