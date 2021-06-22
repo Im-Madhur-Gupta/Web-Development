@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Template Areas</title>
+    <!-- Grid Template Areas is a super powerful tool. -->
+    <style>
+        .container{
+            display: grid;
+            gap: 1rem;
+
+            /* grid-template-areas creates a matrix mane ki rows and columns, each row comes in '' and should have same number of columns */
+            /* assume I want to create 3 rows and 4 columns layout, with navbar occupying 1st entire row, then on the 2nd row section:sub-section:aside in 2:1:1, then in last row footer */
+            grid-template-areas: 
+            'navbar navbar navbar navbar'
+            'section section subsec aside'
+            'footer footer footer footer';
+        }
+        .item{
+            background-color: rgb(236, 186, 119);
+            border: 2px solid red;
+        }
+        #navbar{
+            /* REMEMBER jo bhi elements apko template-areas me use karne he unka apko pehle area mark karna padega */
+            /* maine navbar ka grid area mark kar diya uske name se, similar for others */
+            grid-area: navbar;
+        }
+        #section{
+            grid-area: section;
+        }
+        #sub-section{
+            grid-area: subsec;
+        }
+        #aside{
+            grid-area: aside;
+        }
+        footer{
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="navbar"class="item">
+            About Contact Us Download
+        </div>
+        <div id="section"class="item">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iste ut excepturi quia nesciunt fuga itaque incidunt ratione esse deleniti, nulla ab suscipit omnis molestias veniam eveniet soluta natus a quae minus dolorum pariatur commodi. Expedita hic iure dolor enim, excepturi placeat minus eos officiis perspiciatis doloremque delectus ipsam et quos ipsa velit eveniet molestias? Ab mollitia magnam, nulla suscipit enim natus aspernatur nemo aliquam ullam corporis assumenda praesentium ducimus, illo voluptates, laborum earum quas laboriosam. Nesciunt, quos asperiores. Quis repellat unde eos repudiandae non eaque consequuntur maxime. Quae aspernatur amet accusantium rem voluptatem, fuga id fugiat eos similique? Eligendi qui esse ipsa nulla adipisci dolorum, molestias neque, magni, dolorem beatae ut facilis recusandae sed a dolore rerum itaque ad eos rem! Autem ut error illo alias eum ea sunt quod beatae labore voluptas molestiae accusamus enim temporibus aliquam consectetur libero nulla inventore reiciendis modi vel, laudantium quaerat cumque? Quidem ipsum porro cumque illum, sunt id reprehenderit tempora ratione assumenda perferendis sit. Ducimus odio nulla eligendi, unde facere vel, quod ratione aliquam minima saepe voluptatem optio, consequuntur cum earum dolores sint excepturi et aut? Iste soluta atque est dolorem, amet itaque enim magni reiciendis perferendis inventore voluptatem ducimus sequi maiores!
+        </div>
+        <div class="item" id="sub-section">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda consectetur, accusantium, eos quidem repellendus similique perspiciatis tempore porro labore nobis amet quasi natus iste ipsum, ipsam numquam qui nisi dolor modi impedit sint pariatur quibusdam? Magni optio veniam inventore consectetur! Animi accusamus voluptates odio minima eum maiores fuga excepturi in, quidem perferendis amet quas error, dolore architecto rem veniam, eius fugit quibusdam ipsa nisi accusantium! Iste, sapiente? Saepe numquam culpa alias enim ad amet iusto cum iste commodi, temporibus, quisquam laudantium neque voluptatum dolorem dolores ipsum assumenda tempore ipsam. Ea dicta voluptates qui ratione quia! Ipsa ad modi laborum! Nisi?
+        </div>
+        <div id="aside" class="item">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, officia beatae rem tempora veniam sequi iure deserunt animi vero corrupti ducimus nostrum molestias omnis a dolore fuga, libero, nemo facere? Ratione voluptatibus hic magni at illum itaque iste, rem pariatur sequi neque corporis sint voluptates dolore nesciunt a. Iure delectus amet vero vitae
+        </div>
+        <footer class="item">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, eos?
+        </footer>
+    </div>
+</body>
+</html>

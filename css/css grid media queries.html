@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Media Queries</title>
+    <style>
+        .container {
+            display: grid;
+            gap: 1rem;
+        }
+
+        #navbar {
+            grid-area: navbar;
+        }
+
+        #section {
+            grid-area: section;
+        }
+
+        #aside {
+            grid-area: aside;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+
+        .item {
+            background-color: rgb(236, 186, 119);
+            border: 2px solid red;
+        }
+
+        /* Manlo kisi ek media query pe mai x element ko NHI dikhana chahta to mai pehle uska display: none kardunga, phir grid ka layout bina x ke dedunga, see the below media query */
+
+        @media (min-width:0px) and (max-width:500px) {
+            /* x = #aside */
+            #aside {
+                /* Step 1 - Display None */
+                display: none;
+            }
+
+            .container {
+                /* Step 2 - Redifine grid layout without that element */
+                grid-template-areas:
+                    'navbar'
+                    'section'
+                    'footer';
+            }
+        }
+
+        @media (min-width:500px) and (max-width:1000px) {
+            body {
+                background-color: red;
+            }
+
+            .container {
+                grid-template-areas:
+                    'navbar'
+                    'section'
+                    'aside'
+                    'footer';
+            }
+        }
+
+        @media (min-width:1000px) and (max-width:1500px) {
+            body {
+                background-color: blue;
+            }
+
+            .container {
+                grid-template-areas:
+                    'navbar navbar navbar'
+                    'section section section'
+                    'footer aside aside';
+            }
+        }
+
+        @media (min-width:1500px) {
+            body {
+                background-color: rgb(58, 32, 32);
+            }
+
+            .container {
+                grid-template-areas:
+                    'navbar navbar navbar navbar'
+                    'section section section aside'
+                    'footer footer footer footer';
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="navbar" class="item">
+            About Contact Us Download
+        </div>
+        <div id="section" class="item">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iste ut excepturi quia nesciunt fuga
+            itaque incidunt ratione esse deleniti, nulla ab suscipit omnis molestias veniam eveniet soluta natus a quae
+            minus dolorum pariatur commodi. Expedita hic iure dolor enim, excepturi placeat minus
+        </div>
+        <div id="aside" class="item">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, officia beatae rem tempora veniam sequi iure
+            deserunt animi
+        </div>
+        <footer class="item">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, eos?
+        </footer>
+    </div>
+</body>
+
+</html>
