@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid 2</title>
+    <style>
+        .grid{
+            display: grid;
+            grid-template-columns: 1fr 2fr 4fr;
+            gap: 1rem;
+
+            /* Note - the box items are div elements and their width hasn't been specified so by default they will take up the entire width. */
+
+            /* grid-template-rows - rows banayega, we have to tell it how many rows and width of rows.
+            below statement se 3 rows banjaengi with width 1:1:4 aur (IMP) jo baki ki required number of rows he unhe 1fr mil jaega bcz they get the smallest ratio/width specifed in the grid-template-rows 
+            if we want to change this DEFAULT row width from 1fr (here) to something else we have to use grid-auto-rows ppt. */
+            grid-template-rows: 1fr 1fr 4fr;
+            
+            /* grid-auto-rows se basically un rows ki width mai dedeta hu jinke liye maine pehle ya aage width define ni kiya he. */
+            grid-auto-rows: 2fr;
+        }
+        .box{
+            background-color: rebeccapurple;
+            color: white;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="box">This is box-1</div>
+        <div class="box">This is box-2</div>
+        <div class="box">This is box-3</div>
+        <div class="box">This is box-4</div>
+        <div class="box">This is box-5</div>
+        <div class="box">This is box-6</div>
+        <div class="box">This is box-7</div>
+        <div class="box">This is box-8</div>
+        <div class="box">This is box-9</div>
+        <div class="box">This is box-10</div>
+        <div class="box">This is box-11</div>
+        <div class="box">This is box-12</div>
+        <div class="box">This is box-13</div>
+        <div class="box">This is box-14</div>
+        <div class="box">This is box-15</div>
+        <div class="box">This is box-16</div>
+        <div class="box">This is box-17</div>
+        <div class="box">This is box-18</div>
+        <div class="box">This is box-19</div>
+        <div class="box">This is box-20</div>
+    </div>
+</body>
+</html>

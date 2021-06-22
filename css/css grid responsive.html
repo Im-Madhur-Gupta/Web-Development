@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid 3</title>
+    <style>
+        .grid{
+            display: grid;
+            
+            /* IMPORTANT */
+            grid-template-columns: repeat(auto-fit, minmax(200px,400px));
+            /* matlab minimum width of column is 200px usse chota ni hone dega and maximum width of each column is 400px usse bada ni hone dega, and auto-fit decides ki kitne columns aa sakte he ek particular device width ke liye, jab auto-fit ke according sirf 1 hi column aa sakega aur phir maine width decrease kari to column ki width minimum value tak decrease hogi, phir decreae hona band ho jaegi aur overflow dikhega content ka. 
+            https://youtu.be/QAv7TsE18QM?list=PLu0W_9lII9agiCUZYRsvtGTXdxkzPyItg
+            
+            Note - we can abviously use fr unit as well inside minmax() */
+
+            justify-content: center;
+            /* Note - mai justify-content: center; karke grid ko horizontally center kar sakta hu. */
+            gap: 2rem;
+        }
+        .box{
+            background-color: blanchedalmond;
+            border: 2px solid maroon;
+            padding: 23px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="box">Item-1</div>
+        <div class="box">Item-2</div>
+        <div class="box">Item-3</div>
+        <div class="box">Item-4</div>
+        <div class="box">Item-5</div>
+        <div class="box">Item-6</div>
+        <div class="box">Item-7</div>
+        <div class="box">Item-8</div>
+        <div class="box">Item-9</div>
+        <div class="box">Item-10</div>
+        <div class="box">Item-11</div>
+        <div class="box">Item-12</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid 1</title>
+    <!-- Flexbox se mai 1D layout banata tha yato horizontal yato vertical
+         Using Grid I can make 2D layouts ie rows and columns -->
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            display: grid;
+            /* container ko as a grid initialize kar diya he aur ab uske andar ke child items grid items ban chuke he */
+
+            /* 1. grid-template-columns  */
+
+            /* grid-template-columns: 300px 100px 100px; */
+            /* is command ka matlab he ki 3 columns banado, 300px 100px aur 100px width ke, aur agr width bach rahi ho to usse aisa ka aisa hi chodd do */
+
+            /* auto width ka matlab he ki jitni bachi hui width he usse sare auto walo me equally divide kardo*/
+            /* grid-template-columns: 300px auto 100px; */
+            /* Example - lets say total width is 1000px and I write 300px auto auto 100px;
+               To isse 4 columns banege with widths 300px 300px 300px 100px, bachi hui width 600px thi usko 2 auto walo me equally divide kardiya. */
+
+            /* agr columns ki width ratio ke terms me deni ho to we use fr unit, % ya ratio is the same thing
+            Note - Ratio can't be less than 1. */
+            /* grid-template-columns: 1fr 5fr 2fr; */
+            /* 1+5+2 = 8, matlab 1st col ki width is 1/8th of total width, 2nd - 5/8th, 3rd - 2/8th */
+
+            /* ab manlo mujhe n number of columns bananne the ek particular same width ke to mai use karunga repeat function ko --> grid-template-columns: repeat(no. of columns , width); */
+            grid-template-columns: repeat(10,auto);
+            /* Note - repeat(3,200px) is equivalent to 200px 200px 200px; */
+        
+            /* 2. grid-gap / gap - grid ke har ek row and column ko gapping dene ke liye. similar to giving margin. Note - grid-gap is obselete, use gap instead.
+            We also have ppts like column-gap and row-gap if we want different gaps between rows and coulmns  */
+            gap: 10px;
+        }
+        .item{
+            background-color: red;
+            border: 2px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">This is item-1</div>
+        <div class="item">This is item-2</div>
+        <div class="item">This is item-3</div>
+        <div class="item">This is item-4</div>
+        <div class="item">This is item-5</div>
+        <div class="item">This is item-6</div>
+        <div class="item">This is item-7</div>
+        <div class="item">This is item-8</div>
+        <div class="item">This is item-9</div>
+        <div class="item">This is item-1</div>
+        <div class="item">This is item-2</div>
+        <div class="item">This is item-3</div>
+        <div class="item">This is item-4</div>
+        <div class="item">This is item-5</div>
+        <div class="item">This is item-6</div>
+        <div class="item">This is item-7</div>
+        <div class="item">This is item-8</div>
+        <div class="item">This is item-9</div>
+    </div>
+</body>
+</html>
