@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String and String Methods</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Lorem ipsum dolor sit.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto praesentium amet quae natus minus vero voluptates, rem eligendi molestias. Ratione fugit, ducimus rerum quod cumque nobis provident atque ipsa ex?</p>
+    </div>
+
+    <script>
+        // Strings in Js could be made using both "" and '', it's just that if u want to use single-quote in your string then you should use "", vice-versa.
+        var name = "Madhur Gupta ";
+        var company = "Mad's";
+        console.log(name + company);
+        // If you want to use both single and double quotes in your string then you should use `` (backticks)
+        var address = `HI "maddy" 'sup'`;
+        console.log(address);
+        
+        // backticks (``) also allows us to create String Templates (fill in the blanks type of thing)
+        var city = "New Delhi";
+        var country = "India";
+        var year = 1947;
+        // IMP Creating String Template - Any variable's name can be put inside ${} and then it would get added.
+        var template = `${country}'s capital is ${city} and it got independace in ${year}.`;
+        console.log(template);
+
+        // .length method - tells us the length of a string
+        console.log(`length of the string city is ${city.length}.`);
+        var length_country = country.length;
+
+        // Escape Sequence characters in JavaScript -
+        // \n - newline
+        // \t - tab space
+        // \\ - 1 backslash
+        // \' - single quote
+        // \" - double quote
+
+        // Alternate way to make a string - using constructors
+        var alt_str = new String("SUP");
+        // console.log(alt_str);
+
+
+        // STRING METHODS IN JavaScript -
+        // Just like in python, none of the string methods will modify the original string/strings.
+
+        // 1. indexOf(sub_string) - gives the index of first occurence of sub_string inside the main string, not found - (-1)
+        var str = "Madhur Is is";
+        console.log(str.indexOf("is"));
+        console.log(str.indexOf("z"));
+
+        // 2. lastIndexOf(sub_string) - gives the index of last occurence of sub_string inside the main string, not found - (-1)
+        console.log(str.lastIndexOf("is"));
+
+        // 3. slice(start index,end index) - slices a string, Note - start index is included whereas end index is excluded.
+        var substr = str.slice(2,8);
+        console.log(substr);
+        // slice() method can take -ive indices as well but substring() method only takes +ive indices, rest things are same.
+        console.log(str.substring(2,8));
+        // Another string slicing method is substr(start index,length of sub string) -
+        console.log(str.substr(2,6));
+
+        // 4. replace(old sub-string,new sub-string) - replaces 1st occurence of old sub-string with new sub-string and then returns it, IMP - It DOES NOT modify the original string it just returns a new string with the replaced new sub-string.
+        var replaced = str.replace("is","Bat");
+        console.log(str);
+        console.log(replaced);
+
+        // 5. Coverting a string entirely to (Upper Case or Lower Case) - These methods do NOT modify the original string 
+        console.log(str.toUpperCase());  
+        console.log(str.toLowerCase());
+
+        // 6. Concatenating Strings - could be done using + operator OR concat() method. This method doesn't modify the original string. 
+        var newStr = str.concat(" Bat");
+        console.log(newStr);
+
+        // 7. Leading aur Trailing whitespaces ko remove karne ke liye trim() method use karte he. Doesn't modify the original.
+        var tempstr = "         IM     asd  as d         ";
+        console.log(tempstr);
+        console.log(tempstr.trim());
+
+        // 8. Ek particular index pe jo character he usse extract karne ke liye, charAt() method OR simply mai char array ki tarah treat karke str_name[index] use kar sakta hu.
+        var tempchar = str.charAt(0);
+        console.log(tempchar); 
+        tempchar = str.charAt(1);
+        console.log(tempchar); 
+        tempchar = str[2];
+        console.log(tempchar);
+
+        // Particular index pe jo character he uska ASCII code extract karne ke liye, charCodeAt() method.
+        tempchar = str.charCodeAt(2);
+        console.log(tempchar);
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope and Conditionals</title>
+</head>
+<body>
+    <!-- another emmet command - div>ul>li{item-$}*7, div ke andar ul ke andar li aur aise 7 -->
+    <div>
+        <ul>
+            <li>item-1</li>
+            <li>item-2</li>
+            <li>item-3</li>
+            <li>item-4</li>
+            <li>item-5</li>
+            <li>item-6</li>
+            <li>item-7</li>
+        </ul>
+    </div>
+    <script>
+        var string1 = "This is a string";
+        var string1 = "This is a string1";
+        // above is valid ek hi variable ko do baar declare kardiya (var) phir bhi JS error ni dega, it's forgiving.
+
+        // var se declare kiya hua variable ka scope global hota he meaning jaha declare kara udhar Global, matlab function ke andar declare kiya to us function ke liye global (sirf uss function ke andar accessible), aise hi declare kiya (like above) to full code ke liye global.
+
+        // if we use let keyword to declare a variable then its scope is block level ie limited to the {} it was declared into, abviously agr bina {} ke kiya to uska scope entire code ho jaega.
+        let str2 = "str2"; // koi {} ni he to entire code scope he str2 ka
+        let str4 = "str4global";
+        {
+            let str3 = "str3"; // str3 ka scope is limited to {} uske bahar uska koi existence ni he.
+            let str4 = "str4local"; // is str4 ne upar wale global str4 ko BLOCK KE ANDAR REPLACE DIYA.
+            console.log(str2);
+            console.log(str3);
+            console.log(str4);
+        }
+        console.log(str4);
+
+        // REMEMBER - let keyword doesn't allow Redeclaration without changing Scope.
+        // So following isn't allowed -
+        // let string1 = "This is a string";
+        // let string1 = "This is a string1";
+        
+
+        // Declaring a constant in JS using const keyword -
+        const constant1 = "Constant 1";
+        // constant1 = "change"; --> changing a constant after declaration isn't allowed.
+        // just like let keyword, its scope is limited to {} aur agr aise hi kardiya (above) to whole code AND bina scope change kare mai constant ko redeclare ni kar sakta. 
+        
+
+        // If-else in JS is same as Java
+        let age = 20;
+        if(age>18 && age<30){
+            console.log("You can vote. You are young");
+        }
+        else if(age>=30){
+            console.log("You can vote. You're old.");
+        }
+        else{
+            console.log("Go home, kid.");
+        }
+        // switch works same as in java,c etc.
+    </script>
+</body>
+</html>

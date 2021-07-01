@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference Type Variables - Arrays and Objects</title>
+</head>
+<body>
+    <script>
+        // Jaisa java me tha ki primitive-type variables data se store hote he aur non-primitive/reference-type/Objects reference se store hote he, bilkul waisa hi JS me he.
+
+
+        // Primitives in JS -
+        let var1 = 2; // integer/decimal, basically number
+        let var2 = "str"; // string/character
+        let var3 = true; // boolean
+        let var4 = null; // null
+        let var5 = undefined; // undefined (default), matlab uske andar koi bhi value ni he
+
+        let var6; // --> would be undefined type by default
+
+
+        // Reference type -
+        // For now, object in js is quite similar to dictionary (key:value pairs) in python (NOT EXACTLY) and array to list in python.
+        
+        // Declaring and Initializing Object -
+        let obj1 = {
+            name:"MADDY",
+            work:"Abhi learning web dev",
+            age:"20",
+            address:["hi","bhai","temp"],
+            colorblind:false,
+            height:162.9,
+            "channel 2":"space wala ppt name"
+        }
+        console.log(obj1);
+        // Object ke parameters/property values ko access karne ke liye 2 options he - 
+        // Alt. 1 - obj_name.ppt
+        console.log(obj1.name);
+        console.log(obj1.address);
+        // console.log(obj1.channel 2"); --> error
+        // Alt. 2 - use [] with ppt in quotes, IMP - agr mere ppt name mai spaces " " aa rahi he to mujhe COMPULSORYLY Alt. 2 ko use karna padega.
+        console.log(obj1["name"]);
+        console.log(obj1["address"]);
+        console.log(obj1["channel 2"]);
+
+        // Declaring and Initializing Array (Remember - Array is a special type of object) -
+        let arr1 = [1,2.2,true,undefined,null,"sup",4,21.987,[1,2,true,"kuch bhi"],{p1:"temp",p2:"hi"}];
+        console.log(arr1);
+        // Array ke andar array, array ke andar obj (same for objects) jo man kare wo kar sakte he, just remember the above python analogy.
+
+        // element wise access kar sakte he array ko using [index]
+        console.log(arr1[0]);
+        console.log(arr1[1]);
+        console.log(arr1[2]);
+        console.log(arr1[5]);
+        // out of index pe error ni undefined milega, JS is forgiving.
+
+        // Alternate way to create array using constructor -
+        let arr2 = new Array(1,41,-2,4,"etc");
+        console.log(arr2);
+        
+        // Note - If I want to create an array of say 23 elements in which all of these elements are undefined then -
+        let arr_temp = new Array(23);
+        console.log(arr_temp);
+        console.log(arr_temp[1]);
+        arr_temp[1]=1;
+        console.log(arr_temp);
+
+        // array ki length ke liye arr_name.length;
+        console.log(arr2.length);
+
+        // Note - Sorting is in seperate file
+        
+        // push() and pop() - Adding and Deleting elements from Array (They will change the original array)
+        // The push() method adds new items to the end of an array, and returns the new length.
+        let arr3 = [1,2,3,"name"];
+        arr3.push("Batman");
+        console.log(arr3);
+        // The pop() method removes the last element of an array, and returns that element.
+        console.log(arr3.pop());
+        console.log(arr3);
+    </script>
+</body>
+</html>

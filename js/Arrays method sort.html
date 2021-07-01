@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays - Sort Method</title>
+</head>
+<body>
+    <script>
+        // *IMPORTANT* SORTING an array - 
+        // Initial Notes - 1. As sort() is a function of array it WILL modify the original array, it also returns the sorted array. 2. sort() function is an in-place sort. 3. We can always implement some sort algo ourselves.
+        
+        // By default, sort() method will convert all the elements to be sorted to strings and then compare each of their characters index wise with respect to their UTF-16/UNICODE values (so there would be a difference between capital and small alphabets) in ASCENDING ORDER. Remember this is the default behaviour ie when no agruement etc is passed in sort().
+        
+        // Ex 1 - 
+        // let months = ['March', 'Jan', 'Feb', 'Dec'];
+        // months.sort();
+        // console.log(months);
+        // Output: Array ["Dec", "Feb", "Jan", "March"]
+        // Note - Agr Strings ka DESCENDING order mai sort karna he to simply use .sort().reverse();
+        
+        // Ex 2-
+        // let array1 = [1, 30, 4, 21, 100000];
+        // array1.sort();
+        // console.log(array1);
+        // Output: Array [1, 100000, 21, 30, 4]
+        
+        // Just remember that default sort() me elements ko strings bananao unke characters ko unicode me convert karo aur fir ascending me arrange kardo.
+
+
+        // For NUMERICAL sorting of array / Ham agr numbers ko compare karna chahe naki unicode values -
+        
+        // Mujhe is case me and kisi bhi case me jisme mai alag order ki sorting krna chahu rather than default to I have to use an additional agruement in sort() which is a function -
+        
+        // The sort() method accepts an optional argument which is a function that compares two elements of the array. The compare function of the sort() method accepts two arguments (a,b) and returns a value that determines the sort order.
+        // The sort() method will sort elements based on the return value of the compare() function with the following rules:
+        // 1. If compare(a,b) is less than zero, SAME ORDER. The sort() method sorts a to a lower index than b.
+        // 2. If compare(a,b) is greater than zero, REVERSE ORDER. The sort() method sort b to a lower index than a.
+        // 3. If compare(a,b) returns zero, the sort() method considers a equals b and leaves their positions unchanged.
+        
+        // Ex 1 - Sort NUMBERS in ASCENDING order
+        let arr_num = [1,7,0,-56,223,1,-552,9,-32,5];
+        
+        // Alt. 1 - isme mai compare (compare is just a identifier) function ko apne code mai kahi aur bhi define kar sakta hu aur fir usse call karlunga seedha. Remember the word "function" that comes below is part of syntax and not the name of function.
+        arr_num.sort(function compare_num(a,b) {
+            return a - b;
+        });
+        // OR we can use another logic.
+        // Note - We can omit name of the function as well for shorter syntax.
+        arr_num.sort(function(a,b) {
+            if(a<b){
+                return -1;
+            }
+            if(a>b){
+                return 1;
+            }
+            return 0; // for a=b case.
+        });
+
+        // Alt. 2 - Logic wahi rakenge but arrow operator (=>) wala shorter syntax use karenge
+        // Note - arrow operator doesn't allow naming of the function.
+        arr_num.sort((a,b) => a - b);
+        // Similarly
+        arr_num.sort((a,b) => {
+            if(a<b){
+                return -1;
+            }
+            if(a>b){
+                return 1;
+            }
+            return 0; // for a=b case.
+        });
+        console.log(arr_num);
+
+        // Ex 2 - Sort NUMBERS in DESCENDING order
+        arr_num.sort((a,b) => b-a);
+        console.log(arr_num);
+
+        // Applying sort() methdod
+        let names = ["madhur","aditya","jay","zack"];
+        let nums = [1,100,2001,173,9];
+        console.log(names.sort());
+        console.log(names.sort().reverse());
+        
+        console.log(nums.sort()); // default
+        console.log(nums.sort((a,b)=>a-b));
+    </script>
+</body>
+</html>
