@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Interaction - Alert, Prompt and Confirm</title>
+</head>
+<body>
+    <div class="container">This is a page.</div>
+    <script>
+        // alert() function in in-browser JavaScript -
+        // This function displays an alert/pop-up message to the user inside a modal window and during the time which modal window is open website remians unaccessable.
+        alert("This is an alert message.");
+        // alert() function doesn't return anything.
+
+        // Asking some question to the user using prompt() function -
+        let ques = prompt("How are you?","Fine thank you.");
+        // prompt() function takes 2 strings as input 1st - Question, 2nd - Default Answer (Optional he, agr ni dala to kuch ni ayega, depends on browser), it returns the answer entered by the user.
+        console.log(ques);
+
+        // Double checking something with the user using confirm() function -
+        // It takes a string as input that would ask a confirming question and it returns a boolean (yes-true, no-false).
+        let deletePost = confirm("Do you really want to delete this post?");
+        if(deletePost){
+            console.log('Your post has been deleted successfully.');
+        }
+        else{
+            console.log('Your post has not been deleted.');
+        }
+
+        // simple exercise -
+        let age_ques = prompt("How old are you?"," ");
+        if(Number(age_ques)<18){ // simple typeconversion from string to number
+            alert("You cant enter this site.")
+        }
+        else{
+            alert("you can access this site.")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in JS</title>
+</head>
+<body>
+    <script>
+        // for loop
+        // for(let i=0;i<3;i++){
+        //     console.log(i);
+        // }
+
+        // forEach loop to iterate through array -
+        let arr = [1,2,3,"m"];
+        // arr.forEach(function printArr(element){
+        //     console.log(element);
+        // });
+        // alternative to above using => operator -
+        // arr.forEach((element) => {console.log(element);} );
+
+        // for-of loop to iterate through array - (simplest)
+        for(let element of arr){
+            console.log(element);
+        }
+
+        // for-in loop to get key/ppt of object one by one -
+        let obj1 = {
+            name:"Madhur",
+            rollno:"202051112",
+            temp:"home"
+        }
+        for(let key in obj1){
+            console.log(`The ${key} of obj1 is ${obj1[key]}.`);
+        }
+
+        // while loop -
+        let a=0;
+        // while(a<=5){
+        //     console.log(a++);
+        // }
+
+        // do-while loop -
+        do{
+            console.log(a++);
+        }while(a<=5);
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulating DOM - Document Object Model</title>
+</head>
+<body>
+    <div class="container" id="navbar">
+        <ul id="navul">
+            <li>Home</li>
+            <li id="navdown">Download</li>
+            <li>Our Mission</li>
+            <li>Contact Us</li>
+            <li>Work With Us</li>
+        </ul>
+    </div>
+
+    <div class="container">Another Container</div>
+    <script>
+        // Accessing some html element by its id from DOM -
+        let nav_html = document.getElementById("navbar");
+        // jo bhi id di he uske corresponding puri html return kardega, return type is HTMLElement.
+        // Name of the variable storing the returned html can be anything.
+        console.log(nav_html);
+        let nav_download = document.getElementById("navdown");
+        console.log(nav_download);
+
+        // Manupilating DOM -
+        // 1. To get inner html of an html element as a string that you can manupilate -
+        let navul_html = document.getElementById("navul"); // consider navul as outer/container html element
+        console.log(navul_html.innerHTML); // printing the inner html inside navul id element as a string
+        navul_html.innerHTML = `<li>Home Dynamic</li>
+            <li id="navdown">Download Dynamic</li>
+            <li>Our Mission Dynamic</li>
+            <li>Contact Us Dynamic</li>
+            <li>Work With Us Dynamic</li>`; // changing the actual inner html
+
+        // Accessing some html elements by class from DOM -
+        let containers = document.getElementsByClassName("container");
+        // It returns an HTMLCollection.
+        console.log(containers);
+        // Ab arrays ki tarah [index] deke mai ek ek element of this HTMLCollection ko access kar sakta hu, order of elements in this collection is same as their order in DOM.
+        console.log(containers[0]);
+        console.log(containers[1]);
+        // Index se mai HTMLCollection ke andar ke indivisual elements ko access kar sakta hu -
+        containers[0].innerHTML = `<ul><li>Home Dynamic 2</li></ul>`;
+    </script>
+</body>
+</html>
