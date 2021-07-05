@@ -16,8 +16,8 @@
             <li>Work With Us</li>
         </ul>
     </div>
-
     <div class="container">Another Container</div>
+
     <script>
         // Accessing some html element by its id from DOM -
         let nav_html = document.getElementById("navbar");
@@ -46,6 +46,34 @@
         console.log(containers[1]);
         // Index se mai HTMLCollection ke andar ke indivisual elements ko access kar sakta hu -
         containers[0].innerHTML = `<ul><li>Home Dynamic 2</li></ul>`;
+
+        // CSS selector se select karna ho to -
+        // Note - jo bhi selector he uske corresponding FIRST matching element select hoke return ho jaega and will get stored in the variable used.
+        
+        // The Document method querySelector() returns the first Element within the document that matches the specified selector, or group of selectors. If no matches are found, null is returned.
+        
+        let sel = document.querySelector(".container");
+        // as this isn't a string to concatenate ni karna sirf sath me print karna he (use ,).
+        console.log("sel contains ",sel);
+        sel.innerHTML = `<ul id="navul">
+            <li>Home dynamic 3</li>
+            <li id="navdown">Download dynamic 3</li>
+            <li>Our Mission dynamic 3</li>
+            <li>Contact Us dynamic 3</li>
+            <li>Work With Us dynamic 3</li>
+            </ul>`;
+            let sel2 = document.querySelector(".container #navul li");
+            sel2.innerHTML = `Home dynamic 4`;
+            let sel3 = document.querySelector(".container #navul li:nth-child(2)");
+            sel3.innerHTML = `Download dynamic 5`;
+            let sel4 = document.querySelector(".container #navul li:nth-child(5)");
+            sel4.innerHTML = `Work With Us dynamic 6`;
+            // Note - Sare psuedo selectors ni chalenge only a few of then work here (:nth-child works but :first-child,:last-child do not), unko select karne ke alag tareke he that we'll see later.
+            
+            // IMP - If you need a list of all elements matching the specified selectors, you should use querySelectorAll() instead. It will return an array like thing (called NodeList) whos elements can be accessed using index.
+            let sel5 = document.querySelectorAll(".container #navul li");
+            console.log(sel5);
+            sel5[sel5.length-2].innerHTML = `Contact Us dynamic 7`; // second last li element target kara.
     </script>
 </body>
 </html>
