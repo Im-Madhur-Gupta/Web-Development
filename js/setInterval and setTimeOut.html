@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS setInterval and setTimeout</title>
+</head>
+<body>
+    <div class="container">This is a container. <span id="timedisplay"> Current time is </span></div>
+    <script>
+        // kabhi kabhar hum ye chahte he ki hamara function kuch time ke bad ya har interval of time me run hota rahe.
+        
+        // 1. setTimeout and clearTimeout -->
+        // Allows us to run the function once after a specified time duration.
+        // Syntax - setTimeOut(function_name ( predefined functions me sirf name of function ayega no () ) OR definition(arrow or normal),time in ms after which the function should run).
+        // Note - If the function we are trying to run after a delay takes arguements then these arguements can be provided to setTimeout as arguements after time(ms).
+        
+        function greet(name,num){
+            console.log("Hello, Good Morning "+name+" "+num);
+        }
+        // setTimeout(greet,5000,"Madhur",1);
+
+        // setTimeout(greet(),5000); --> galat he kyoki setTimeout() me mai function call ni kar sakta, ye error ni throw karega but setTimeout won't do its job wo instantly function ko call kardega.
+
+        // Imp - setTimeout function returns a unique id corresponding to its scheduling, which can be stored in a variable and later using clearTimeout(unique id) we can remove the scheduling.
+        
+        // let schedule_id = setTimeout((name)=>console.log("Hi, "+name),5000,"Madhur");
+        // console.log(schedule_id); // just to display that id.
+        // clearTimeout(schedule_id); // ab ye scheduling abort kardi he maine to ni hogi
+
+
+        // 2. setInterval --> Allows us to run the function repeatedly after a specified time duration.
+        // Just like setTimeout, setInterval also returns an id corresponding to function's repeated execution 
+        let intervalId = setInterval(greet,1000,"Madhur",2);
+        clearInterval(intervalId); // ye karne se setInterval ek bhi bar run ni ho payega.
+        
+        // Lets say I want to run setInterval's function 5 times  ie for 5000ms setInterval should run.
+        let intervalId2 = setInterval(greet,1000,"Madhur1",2);
+        setTimeout(clearInterval,5000,intervalId2); // to maine 5000ms rukne ke baad clearInterval chalwa diya.
+
+
+        // IMPORTANT - Displaying Time on our website -
+        function displayTime(){
+            let time = new Date();
+            document.getElementById("timedisplay").innerHTML = time;
+        }
+        setInterval(displayTime,1000);
+
+    </script>
+</body>
+</html>
