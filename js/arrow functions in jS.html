@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+<body>
+    <div class="container">This is a div.</div>
+    <script>
+        // function add(a,b){
+        //     return a+b;
+        // }
+        // Alternative way to write above using arrow syntax -
+        let add = (a,b)=>{return a+b;}
+        console.log(add(1,3));
+        
+        let sub = (a,b)=>a-b;
+        console.log(sub(1,3));
+
+        let half = a=>a/2; // This syntax is only valid for SINGLE arguement function
+        console.log(half(4.5));
+
+        // setTimeout((a,b)=>{console.log(a*b);},4000,1,10); better alternative below for single command in function body
+        setTimeout((a,b)=>console.log(a*b),4000,1,10);
+
+        let arr = [1,2,5,1,-1,0];
+        arr.sort((a,b)=>{return a-b;});
+        console.log(arr);
+
+        let obj = {
+            greet:"GM",
+            Name:["Madhur","Jay","Mamta","Shishir"],
+            printName(){
+                this.Name.forEach(name=>console.log(this.greet+" "+name));
+                // this.greet for above gives "GM", this won't work for a normal function definition (one with function keyword), such "this" is called "lexical this", normal function definition hoti to ye "this" ussi function ka "this" ho jata.
+            }}
+        obj.printName();
+    </script>
+</body>
+</html>
