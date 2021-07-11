@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON - JavaScript Object Notation</title>
+</head>
+<body>
+    <script>
+        // JSON - JavaScript Object Notation
+        // JSON is a lightweight format for storing and transporting data
+        // JSON is often used when data is sent from a server to a web page
+        // JSON is "self-describing" and easy to understand
+        
+        // JSON syntax rules -
+        // Data is in name/value pairs
+        // Data is separated by commas
+        // Curly braces hold objects
+        // Square brackets hold arrays
+        
+        // Note - The JSON format is syntactically identical to the code for creating JS objects, because of this similarity, a JS program can easily convert JSON data into native JS objects.
+
+        let jsonObj = {
+            name:"Madhur",
+            age:"20",
+            favSuperhero:"Batman",
+            friends:["aditya","prathak","dev","Sai"]
+        }
+        console.log(jsonObj);
+
+        // Ab manlo mujhe is object ko transport karna he to through JSON to mai is object to ek string me convert karunga - 
+        let myJson = JSON.stringify(jsonObj); // JS to JSON
+        console.log(myJson);
+        
+        myJson = myJson.replace("Madhur","Maddy");
+        console.log(myJson);
+
+        // Ab manlo ki mera JSON (string) destination pe pahuch gai to ab mai usko phirse JS me convert / PARSE karwana chahta hu -
+        let newjsonObj = JSON.parse(myJson); // JSON to JS
+        console.log(newjsonObj);
+        // agr JSON.parse() me invalid JSON string dedi to error milega.
+        // Note - Kai sari languages me mai JSON ko parse kar sakta hu, its n ot limited to just JS.
+    </script>
+</body>
+</html>

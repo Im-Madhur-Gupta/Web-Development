@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Object JS</title>
+</head>
+<body>
+    <div class="conta">This is a container</div>
+    <script>
+        let obj_math = Math; // ye maine ek Math Object bana liya jiski madad se mai kai sare mathemetical constants aur functions ko directly use kar sakta hu.
+        console.log(obj_math); 
+        
+        // actually object of Math class instantiate karne ki zaroorat ni he seedha Math. karke bhi functions / constants use kar sakte ho hamesha object banake use karne ki zaroorat ni he.
+
+        // Constants in Math Object
+        console.log(obj_math.E); // E is Euler's number.
+        console.log(obj_math.PI);
+        console.log(obj_math.LN10);
+        console.log(obj_math.LN2);
+        console.log(obj_math.LOG10E);
+        console.log(obj_math.LOG2E);
+        console.log(obj_math.SQRT1_2);
+        console.log(obj_math.SQRT2);
+
+        // Functions in Math Object
+        // 1. Round() - Roundoff
+        let a=64.2,b=64.7,c=64.5; // simple >= .5 pe age warna peeche.
+        console.log("Rounded - ",obj_math.round(a),obj_math.round(b),obj_math.round(c));
+
+        // 2. pow(base,exponent) - power
+        let a1=2,b1=3;
+        console.log("2 raised to the power 3 is ",obj_math.pow(a1,b1));
+
+        // 3. sqrt() - square root
+        console.log(obj_math.sqrt(36),obj_math.sqrt(30));
+
+        // 4. floor() and ceil() - floor() is used to round down to the nearest int and ceil() is used to round up to the nearest int.
+        console.log("5.6 rounded down to nearest int ",obj_math.floor(5.6));
+        console.log("5.6 rounded up to nearest int ",obj_math.ceil(5.6));
+
+        // 5. abs() - absolute/mod value dega
+        console.log("Absolute value of 4.7 is ",obj_math.abs(4.7));
+        console.log("Absolute value of -4.7 is ",obj_math.abs(-4.7));
+
+        // 6. Trignometric functions - Note - Angle Radian me jaega.
+        // We have sin, cos, tan and their inverse trig functions.
+        console.log("sin(pi) - ",obj_math.sin(obj_math.PI)); // should be exact 0, but due to precision it comes nearly 0, same for 2*pi. 
+        console.log("sin(2*pi) - ",obj_math.sin(2*obj_math.PI));
+        console.log("sin(pi/2) - ",obj_math.sin(obj_math.PI/2));
+        console.log("sin(0) - ",obj_math.sin(0));
+
+        // 7. min() max() functions -
+        console.log("min of 2,4,1,-1 is ",obj_math.min(2,4,1,-1,4));
+        console.log("max of 2,4,1,-1 is ",obj_math.max(2,4,1,-1,4));
+
+        // 8. Log() functions - Logarithmic functions
+        console.log(obj_math.log(obj_math.pow(obj_math.E,2))); // natura log at base e
+        console.log(obj_math.log10(obj_math.pow(100,3))); // base 10
+        console.log(obj_math.log2(obj_math.pow(2,3))); // base 2
+
+        // 9. (IMP) random() - Generating a random number.
+        let r = obj_math.random(); // generates a random number (decimal wala obviously) b/w 0 and 1.
+        // To generate a random number b/w (a,b) - r1 =  a + (b-a)Math.random();
+        let r1 = 1 + (99)*Math.random(); // generates a random number b/w 1 and 100.
+        console.log(r, r1); 
+        // Now these numbers can be converted to intergers using floor(), ceil() or round().
+
+        // Q. generate a random number b/w 50 and 60 -
+        let r2 = 50 + (10)*Math.random();
+        console.log(r2);
+    </script>
+</body>
+</html>
