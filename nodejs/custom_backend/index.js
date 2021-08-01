@@ -15,7 +15,7 @@ const server = http.createServer((req,res)=>{
 
     res.statusCode = 200;
     res.setHeader("Content-type","text/html");
-    // For now setHeader() is similar to writeHead(), there is a syntax difference between them and writeHeader also takes statusCode as an arguement as well but content type wali cheez to dono me atti he.  
+    // For now setHeader() is similar to writeHead(), there is a syntax difference between them and writeHead() also takes statusCode as an arguement as well but content type wali cheez to dono me atti he.  
     if(req.url=="/"){
         res.end(home);
     }
