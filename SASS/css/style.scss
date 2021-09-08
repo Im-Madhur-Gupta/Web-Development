@@ -1,0 +1,144 @@
+// Imports
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+// Creating variable in SCSS -
+// $bgcolor: red;
+// body{
+//     background-color: $bgcolor;
+// }
+
+// Creating a SASS map - basically a hash map, just like a JS object with key:value pairs
+$colors : (
+    primary:maroon,
+    primary-light:lighten(maroon,10%),
+    secondary:rgb(236, 229, 229)
+);
+// body{
+//     background-color: map-get($colors,primary); // map-get(name of sass map, ppt which we want to use)
+//     another way to do above is using functions (see below)
+// }
+
+
+// Creating a function in SASS -
+@function color($color-degree){
+    @return map-get($colors,$color-degree)
+}
+
+$padding : 10px; // will be used for paddding
+// $padding*4 will give 40px
+$border-rad : 10px;
+
+
+// Creating and using a mixin - We'll use it for a responsive design
+$desktop:840px;
+@mixin desktop{
+    @media (min-width:#{$desktop}){
+        @content
+    }
+}
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body,html{
+    height: 100%;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+
+    // Nesting css components using sass - makes it easier for to understand heirarchy
+    // nesting a div with id = bg
+    #bg{
+        clip-path: polygon(0 0, 100% 0, 100% 45%, 33% 100%, 0 100%);
+        background-color: color(primary); // using the color() function
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        z-index: -1;
+        
+        // Using mixin for responsive design
+        @include desktop{
+            clip-path: polygon(0 0, 78% 0, 61% 100%, 0% 100%);
+        }
+    }
+    header{
+        padding: $padding;
+        a{
+            text-decoration: none;
+            color: color(secondary);
+            font-size: 1.3rem;
+            font-weight: 500;
+            padding: $padding;
+        }
+    }
+}
+main{
+    #card{
+        background-color: color(secondary);
+        width: 80%;
+        margin: 10px auto;
+        padding: $padding;
+        border-radius: $border-rad;
+        box-shadow: 0 10px 30px rgba(0,0, 0, 0.2);
+        ul li{
+            list-style: none;
+            padding: 5px;
+            span{
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                background-color: color(primary-light);
+                border-radius: 15px;
+            }
+            strong{
+                display: inline-block;
+                margin-left: 25px;
+                font-size: 17px;
+                @include desktop{
+                    font-size: 20px;
+                }
+            }
+        }
+        @include desktop{
+            float: right;
+            width: 40%;
+            margin-top: $padding*4;
+        }
+    }
+    #assist{
+        color: color(secondary);
+        padding: $padding;
+        text-align: center;
+        h1{
+            font-size: 3em;
+            padding: $padding;
+        }
+        p{
+            font-size: 1.4rem;
+            padding: $padding;
+        }
+        button{
+            margin-top: 20px;
+            padding: 10px;
+            background-color: color(secondary);
+            width: 40vw;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0, 0, 0.2);
+            @include desktop{
+                width: 20vw;
+            }
+        }
+        @include desktop{
+            float: left;
+            width: 40%;
+        }
+    }
+    @include desktop{
+        margin: 18vh 20px 0 20px;
+    }
+}
