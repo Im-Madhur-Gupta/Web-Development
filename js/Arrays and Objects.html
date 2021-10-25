@@ -32,7 +32,13 @@
             address:["hi","bhai","temp"],
             colorblind:false,
             height:162.9,
-            "channel 2":"space wala ppt name"
+            "channel 2":"space wala ppt name",
+            greet(){
+                console.log("Hello.");
+            },
+            by(){
+                console.log("By.");
+            }
         }
         console.log(obj1);
         // Object ke parameters/property values ko access karne ke liye 2 options he - 
@@ -44,6 +50,8 @@
         console.log(obj1["name"]);
         console.log(obj1["address"]);
         console.log(obj1["channel 2"]);
+        obj1.greet();
+        obj1.by();
 
         // Declaring and Initializing Array (Remember - Array is a special type of object) -
         let arr1 = [1,2.2,true,undefined,null,"sup",4,21.987,[1,2,true,"kuch bhi"],{p1:"temp",p2:"hi"}];

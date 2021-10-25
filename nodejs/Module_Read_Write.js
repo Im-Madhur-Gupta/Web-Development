@@ -1,6 +1,5 @@
 // Step 1 - Import module filesystem "fs"
 const fs = require("fs");
-
 // Step 2 - Reading the file
 let text = fs.readFileSync("./nodejs/read.txt","utf-8");
 console.log(text);

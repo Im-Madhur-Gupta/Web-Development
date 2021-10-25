@@ -1,0 +1,7 @@
+* VIM stands for Vi Improved. PHP stands for PHP Hypertext Preprocessor.
+* VIM is text editor that is pre-installed on almost every server.
+* There are 3 modes in VIM -
+    1. insert mode - text editing - i
+    2. command mode - copy, paste - ESC
+    3. last line mode - search, save and exit - :
+* HOW to EXIT VIM - ESC :q! , ! is just saying to discard all the changes made.

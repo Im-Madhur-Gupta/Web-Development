@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>innerHTML vs innerText</title>
+  </head>
+  <body>
+    <p id="demo">
+      This element has extra spacing and contains <span>a span element</span>.
+    </p>
+
+    <script>
+      function getInnerText() {
+        alert(document.getElementById("demo").innerText);
+        // innerText basically sare ke sare inner html elements ka sirf text rakhti he, ie tag names ko uda degi.
+        // returns string.
+      }
+
+      function getHTML() {
+        alert(document.getElementById("demo").innerHTML);
+        // innerHTML simply sari inner HTML ko aise ka aisa return kardegi.
+        // returns string.
+      }
+
+      getInnerText();
+      getHTML();
+    </script>
+  </body>
+</html>

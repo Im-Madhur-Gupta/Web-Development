@@ -5,7 +5,8 @@
 
 // REPL (terminal me node dalke) me _ contains the last evaluated variable.
 
-const http = require('http');
+const http = require('http'); // --> OLD WAY, Node.js ko yahi samajh ayega.
+// import http from "http"; --> NEW WAY - But Node.js won't understand the new way.
 
 const hostname = '127.0.0.1';
 const port = 3000;

@@ -24,10 +24,12 @@
         var string1 = "This is a string1";
         // above is valid ek hi variable ko do baar declare kardiya (var) phir bhi JS error ni dega, it's forgiving.
 
+        // variable kaha declare hua he uspe focus karo usse scope ka pata chalega.
+
         // var se declare kiya hua variable ka scope global hota he meaning jaha declare kara udhar Global, matlab function ke andar declare kiya to us function ke liye global (sirf uss function ke andar accessible), aise hi declare kiya (like above) to full code ke liye global.
 
         // if we use let keyword to declare a variable then its scope is block level ie limited to the {} it was declared into, abviously agr bina {} ke kiya to uska scope entire code ho jaega.
-        let str2 = "str2"; // koi {} ni he to entire code scope he str2 ka
+        let str2 = "str2"; // koi {} ni he to entire code scope he str2 ka.
         let str4 = "str4global";
         {
             let str3 = "str3"; // str3 ka scope is limited to {} uske bahar uska koi existence ni he.
