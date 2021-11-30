@@ -1,72 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS Dates</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">This is a container</div>
     <script>
-        let time_now = new Date(); // isse Date class ka ek obj create ho jaega, which will contain date/time of that instant.
-        console.log(time_now);
+      let time_now = new Date(); // isse Date class ka ek obj create ho jaega, which will contain date/time of that instant.
+      console.log(time_now);
 
-        let time_now1 = new Date(1000); // is Date class ke obj me jo date/time stored hoga wo reference (Jan 1 1970 5:30:00 IST) se 1000ms age ka date/time dega
-        console.log(time_now1);
+      let time_now1 = new Date(1000); // is Date class ke obj me jo date/time stored hoga wo reference (Jan 1 1970 5:30:00 IST) se 1000ms age ka date/time dega
+      console.log(time_now1);
 
-        let some_date = new Date("2030-04-06"); // ek particular date store karwane ke liye.
-        console.log(some_date);
+      let some_date = new Date("2030-04-06"); // ek particular date store karwane ke liye.
+      console.log(some_date);
 
-        // An IMPORTANT way to describe Date() constructor -
-        // Note - JS counts months from 0 to 11. Jan is 0. Dec is 11. Baki year, date, time me as it is.
-        // Syntax -
-        // let date_time_custom = new Date(year,month,date,hours,minutes,seconds,milliseconds);
-        let date_time_custom = new Date(3030,4,20,12,5,20,32);
-        console.log(date_time_custom);
+      // An IMPORTANT way to describe Date() constructor -
+      // Note - JS counts months from 0 to 11. Jan is 0. Dec is 11. Baki year, date, time me as it is.
+      // Syntax -
+      // let date_time_custom = new Date(year,month,date,hours,minutes,seconds,milliseconds);
+      let date_time_custom = new Date(3030, 4, 20, 12, 5, 20, 32);
+      console.log(date_time_custom);
 
-        // Now if I want to extract/read year,month,date etc indivisually from a date variable then I will use the following -
-        let yr = date_time_custom.getFullYear();
-        console.log(yr);
+      // Now if I want to extract/read year,month,date etc indivisually from a date variable then I will use the following -
+      let yr = date_time_custom.getFullYear();
+      console.log(yr);
 
-        let mnth = date_time_custom.getMonth();
-        console.log(mnth+1); // +1 kiya bcz month in JS is from 0 to 11.
-        
-        let dt = date_time_custom.getDate();
-        console.log(dt);
+      let mnth = date_time_custom.getMonth();
+      console.log(mnth + 1); // +1 kiya bcz month in JS is from 0 to 11.
 
-        let dayofweek = date_time_custom.getDay();
-        console.log(dayofweek);
-        
-        let hr = date_time_custom.getHours();
-        console.log(hr);
-        
-        let min = date_time_custom.getMinutes();
-        console.log(min);
-        
-        let s = date_time_custom.getSeconds();
-        console.log(s);
-        
-        let ms = date_time_custom.getMilliseconds();
-        console.log(ms);
+      let dt = date_time_custom.getDate();
+      console.log(dt);
 
-       // Now if I want to Change year, month, date etc in a date variable then I'll use .set___ functions -
-       date_time_custom.setFullYear(2030);
-       console.log(date_time_custom);
-       
-       date_time_custom.setMonth(7); // IMP - month - {0,1,...,11}, phir [12-23] jan to dec, next [24-35] jan to dec, and this continues, ye aisa he taki sirf month me +1 karne se next month milte rahe hamesha with no checking of month number required, sahi he for practical website use.
-       console.log(date_time_custom); 
+      let dayofweek = date_time_custom.getDay();
+      console.log(dayofweek);
 
-       date_time_custom.setDate(15); // IMP - if date is greater than the number of days in that month then automatically the date is corrected ie date = date%(number of days in that month).
-       console.log(date_time_custom);
-       
-       // Similar functions for setting hours, minutes and seconds are present note if sec>60 to wo number%60 ko lega aur uske sath sath minute + 1 bhi kar dega (will take to next minute), same for setting minutes and hours.
+      let hr = date_time_custom.getHours();
+      console.log(hr);
 
+      let min = date_time_custom.getMinutes();
+      console.log(min);
 
-       // Date.now() - This method returns the number of milliseconds elapsed since Jan 1, 1970 00:00:00 UTC.
-       // It's basically used to create a timestamp. Kitna time beet gaya kisi block of code ko run karne me can be found by making start and end timestamps,then end-start.
-       let t1 = Date.now();
-       console.log(t1);
+      let s = date_time_custom.getSeconds();
+      console.log(s);
+
+      let ms = date_time_custom.getMilliseconds();
+      console.log(ms);
+
+      // Now if I want to Change year, month, date etc in a date variable then I'll use .set___ functions -
+      date_time_custom.setFullYear(2030);
+      console.log(date_time_custom);
+
+      date_time_custom.setMonth(7); // IMP - month - {0,1,...,11}, phir [12-23] jan to dec, next [24-35] jan to dec, and this continues, ye aisa he taki sirf month me +1 karne se next month milte rahe hamesha with no checking of month number required, sahi he for practical website use.
+      console.log(date_time_custom);
+
+      date_time_custom.setDate(15); // IMP - if date is greater than the number of days in that month then automatically the date is corrected ie date = date%(number of days in that month).
+      console.log(date_time_custom);
+
+      // Similar functions for setting hours, minutes and seconds are present note if sec>60 to wo number%60 ko lega aur uske sath sath minute + 1 bhi kar dega (will take to next minute), same for setting minutes and hours.
+
+      // Date.now() - This method returns the number of milliseconds elapsed since Jan 1, 1970 00:00:00 UTC.
+      // It's basically used to create a timestamp. Kitna time beet gaya kisi block of code ko run karne me can be found by making start and end timestamps,then end-start.
+      let t1 = Date.now();
+      console.log(t1);
+
+      // IMP - Months ko agr January, Febuary etc me show karna he to use toLocaleString("en-US",{month:"long"}) method of date class.
     </script>
-</body>
+  </body>
 </html>
