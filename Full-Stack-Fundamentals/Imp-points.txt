@@ -1,2 +1,0 @@
-* HTTP runs over port 80.
-* HTTPS runs over port 443 
