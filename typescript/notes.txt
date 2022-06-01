@@ -1,0 +1,22 @@
+- Browser only understands JS, TS has to be compiled to JS.
+
+- Js mai sare nums float ke form mai hote he to 5 is equal to 5.0.
+
+- Some special JS operators - 
+1. Nullish Coalescing operator (??)
+-> x??y
+-> if x is null OR undefined then return y otherwise return the value of x.
+
+2. Optional Chaining operator (?.)
+-> x?.y
+-> if x is null or undefined then return undefined otherwise return the value of ppt y of x.
+
+- any type in TS yani kuch bhi daldo.
+
+- IMP - 
+    - Void represents the return value of functions which don’t return a value. 
+    - It’s the inferred type any time a function doesn’t have any return statements, or doesn’t return any explicit value from those return statements.
+    - void vs undefined -
+        - In JavaScript, a function that doesn’t return any value will implicitly return the value undefined.
+        - In TypeScript, void is not the same as undefined.
+        - VV IMP -> void in TS means return value won't be observed, can return any value, but it will be ignored.
