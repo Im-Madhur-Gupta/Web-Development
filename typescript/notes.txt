@@ -20,3 +20,7 @@
         - In JavaScript, a function that doesn’t return any value will implicitly return the value undefined.
         - In TypeScript, void is not the same as undefined.
         - VV IMP -> void in TS means return value won't be observed, can return any value, but it will be ignored.
+
+- Interface vs Type -
+    - General use case mai koi pharak ni padta.
+    - key distinction is that a type cannot be re-opened to add new properties vs an interface which is always extendable.
